@@ -1,0 +1,51 @@
+<hr>
+<div class="row">
+  <div class="col-xs-12">
+    <!--<a-->
+    <!--href="#"-->
+    <!--class="list-group-item clearfix"-->
+    <!--*ngFor="let book of books">-->
+    <!--<div class="pull-left">-->
+    <!--<h4 class="list-group-item-heading">{{ book.name }}</h4>-->
+    <!--<p class="list-group-item-text">{{ book.description }}</p>-->
+    <!--</div>-->
+    <!--<span class="pull-right">-->
+    <!--<img-->
+    <!--[src]="book.imagePath"-->
+    <!--alt="{{ book.name }}"-->
+    <!--class="img-responsive"-->
+    <!--style="max-height: 50px;">-->
+    <!--</span>-->
+    <!--</a>-->
+
+    <a
+      href="#"
+      class="list-group-item clearfix"
+      *ngFor="let book of booksFromFirebaseForDisplay|async">
+      <div class="pull-left">
+        <h4 class="list-group-item-heading">{{ book.name }}</h4>
+        <p class="list-group-item-text">{{ book.description }}</p>
+      </div>
+      <span class="pull-right">
+        <img
+          [src]="book.imagePath"
+          alt="{{ book.name }}"
+          class="img-responsive"
+          style="max-height: 50px;">
+      </span>
+    </a>
+  </div>
+  <div class="row">
+    <input class="col-xs-7 form-control" [(ngModel)]="newBookName"/>
+    <div class="col-xs-5">
+      <button class="btn btn-success" (click)="onBookAdded()"
+              [disabled]="!canAddBook">New book
+      </button>
+      {{canAddBook}}
+      {{booksAddedMessage}}
+
+    </div>
+  </div>
+
+</div>
+

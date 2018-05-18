@@ -1,0 +1,6 @@
+Today
+-----
+- save data in a cloud db (firebase)
+- databinding
+
+
