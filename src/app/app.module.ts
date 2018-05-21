@@ -7,12 +7,13 @@ import {AppComponent} from './app.component';
 import {HeaderComponent} from './header/header.component';
 import {ShoppingListComponent} from './shopping-list/shopping-list.component';
 import {ShoppingEditComponent} from './shopping-list/shopping-edit/shopping-edit.component';
-import {BooksComponent} from "./books/books.component";
-import {BookListComponent} from "./books/book-list/book-list.component";
-import {BookDetailComponent} from "./books/book-detail/book-detail.component";
-import {AngularFireModule} from "angularfire2";
-import {AngularFireDatabaseModule} from "angularfire2/database";
-import {environment} from "../environments/environment";
+import {BooksComponent} from './books/books.component';
+import {BookListComponent} from './books/book-list/book-list.component';
+import {BookDetailComponent} from './books/book-detail/book-detail.component';
+import {AngularFireModule} from 'angularfire2';
+import {AngularFireDatabaseModule} from 'angularfire2/database';
+import {environment} from '../environments/environment';
+import {BookAppenderComponent} from './books/book-list/book-appender/book-appender.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {environment} from "../environments/environment";
     BookListComponent,
     BookDetailComponent,
     ShoppingListComponent,
-    ShoppingEditComponent
+    ShoppingEditComponent,
+    BookAppenderComponent
   ],
   imports: [
     BrowserModule,

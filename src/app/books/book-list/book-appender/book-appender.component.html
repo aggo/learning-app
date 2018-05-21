@@ -1,0 +1,7 @@
+<div class="form-group">
+  <label for="bookname">Name</label>
+  <input class="col-md-7 form-control" id="bookname" [(ngModel)]="newBookName"/>
+</div>
+<button class="btn btn-success" (click)="onBookAdded()"
+        [disabled]="!canAddBook">New book
+</button>
