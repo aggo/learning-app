@@ -14,6 +14,8 @@ import {AngularFireModule} from 'angularfire2';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
 import {environment} from '../environments/environment';
 import {BookAppenderComponent} from './books/book-list/book-appender/book-appender.component';
+import {QuotesListComponent} from "./quotes/quotes-list.component";
+import {QuotesService} from "./quotes.service";
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import {BookAppenderComponent} from './books/book-list/book-appender/book-append
     BookDetailComponent,
     ShoppingListComponent,
     ShoppingEditComponent,
-    BookAppenderComponent
+    BookAppenderComponent,
+    QuotesListComponent
   ],
   imports: [
     BrowserModule,

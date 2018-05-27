@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Book} from '../../recipe.model';
 import {AngularFireDatabase} from 'angularfire2/database';
+import {Book} from "../../book.model";
 
 @Component({
   selector: 'app-book-appender',

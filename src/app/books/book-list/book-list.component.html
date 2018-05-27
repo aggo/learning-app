@@ -4,10 +4,10 @@
     <a
       href="#"
       class="list-group-item clearfix"
-      *ngFor="let book of books|async" (click)="onBookSelected(book)">
+      *ngFor="let book of books|async" (click)="onBookSelected(book)" [title]="book.key">
       <div class="pull-left">
-        <h4 class="list-group-item-heading">{{ book.key }}</h4>
-        <p class="list-group-item-text">{{ book.description }}</p>
+        <h4 class="list-group-item-heading">{{ book.payload.val().name }}</h4>
+        <p class="list-group-item-text">{{ book.payload.val().description }}</p>
       </div>
       <span class="pull-right">
         <img
