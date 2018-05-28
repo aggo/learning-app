@@ -15,7 +15,15 @@ import {AngularFireDatabaseModule} from 'angularfire2/database';
 import {environment} from '../environments/environment';
 import {BookAppenderComponent} from './books/book-list/book-appender/book-appender.component';
 import {QuotesListComponent} from "./quotes/quotes-list.component";
-import {QuotesService} from "./quotes.service";
+import {RouterModule, Routes} from "@angular/router";
+import {DashboardComponent} from "./dashboard/dashboard.component";
+
+
+const appRoutes: Routes = [
+  {path: '', component: BooksComponent},
+  {path: 'books', component: BooksComponent},
+  {path: 'home', component: DashboardComponent},
+];
 
 @NgModule({
   declarations: [
@@ -27,14 +35,16 @@ import {QuotesService} from "./quotes.service";
     ShoppingListComponent,
     ShoppingEditComponent,
     BookAppenderComponent,
-    QuotesListComponent
+    QuotesListComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     AngularFireModule.initializeApp(environment.firebase, 'learning-app-527dd'),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]

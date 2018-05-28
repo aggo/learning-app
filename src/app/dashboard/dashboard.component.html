@@ -1,0 +1,16 @@
+<hr>
+<div class="row">
+  <div class="col-xs-12">
+    <a
+      href="#"
+      class="list-group-item clearfix"
+      *ngFor="let quote of quotes|async">
+      <div class="pull-left">
+        <h4 class="list-group-item-heading">QuoteId: {{ quote.key }}</h4>
+        <h4 class="list-group-item-heading">Bookid: {{ quote.payload.val().bookid }}</h4>
+        <h4 class="list-group-item-heading">Content: {{ quote.payload.val().content }}</h4>
+      </div>
+    </a>
+  </div>
+</div>
+
