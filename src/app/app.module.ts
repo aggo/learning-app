@@ -22,7 +22,7 @@ import {DashboardComponent} from "./dashboard/dashboard.component";
 const appRoutes: Routes = [
   {path: '', component: BooksComponent},
   {path: 'books', component: BooksComponent},
-  {path: 'home', component: DashboardComponent},
+  {path: 'dashboard', component: DashboardComponent},
 ];
 
 @NgModule({
