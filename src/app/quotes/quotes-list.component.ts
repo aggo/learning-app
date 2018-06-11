@@ -1,9 +1,9 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-import {AngularFireAction, AngularFireDatabase, DatabaseSnapshot} from 'angularfire2/database';
-import {Observable} from 'rxjs';
-import {Quote} from "./quote.model";
-import {QuotesService} from "../quotes.service";
+import { AngularFireAction, AngularFireDatabase, DatabaseSnapshot } from 'angularfire2/database';
+import { Observable } from 'rxjs';
+import { Quote } from './quote.model';
+import { QuotesService } from '../quotes.service';
 
 @Component({
   selector: 'app-quotes-list',
@@ -11,7 +11,7 @@ import {QuotesService} from "../quotes.service";
   styleUrls: ['./quotes-list.component.css']
 })
 export class QuotesListComponent implements OnInit {
-  quotes: Observable<AngularFireAction<DatabaseSnapshot>[]>;
+  quotes: Observable<AngularFireAction<DatabaseSnapshot<any>>[]>;
 
   constructor(private db: AngularFireDatabase, private quotesService: QuotesService) {
 

@@ -1,8 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-import {AngularFireAction, AngularFireDatabase, DatabaseSnapshot} from 'angularfire2/database';
-import {Observable} from 'rxjs';
-import {Quote} from "@angular/compiler";
+import { AngularFireAction, AngularFireDatabase, DatabaseSnapshot } from 'angularfire2/database';
+import { Observable } from 'rxjs';
+import { Quote } from '@angular/compiler';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,7 +10,7 @@ import {Quote} from "@angular/compiler";
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  quotes: Observable<AngularFireAction<DatabaseSnapshot>[]>;
+  quotes: Observable<AngularFireAction<DatabaseSnapshot<any>>[]>;
   randomQuote: Quote;
 
   constructor(private db: AngularFireDatabase) {

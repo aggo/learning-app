@@ -1,6 +1,12 @@
 <div class="form-group">
-  <label for="bookname">Name</label>
-  <input class="col-md-7 form-control" id="bookname" [(ngModel)]="newBookName"/>
+  <div class="row">
+    <label for="bookname" class="col-md-3">Name</label>
+    <input class="col-md-7 form-control" id="bookname" [(ngModel)]="newBookName"/>
+    <label for="bookid" class="col-md-3">Id</label>
+    <input class="col-md-7 form-control" id="bookid" [(ngModel)]="newBookId"/>
+    <label for="bookauthor" class="col-md-3">Author</label>
+    <input class="col-md-7 form-control" id="bookauthor" [(ngModel)]="newBookAuthor"/>
+  </div>
 </div>
 <button class="btn btn-success" (click)="onBookAdded()"
         [disabled]="!canAddBook">New book

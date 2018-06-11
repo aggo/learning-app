@@ -1,9 +1,10 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-import {AngularFireAction, AngularFireDatabase, DatabaseSnapshot} from 'angularfire2/database';
-import {Observable} from 'rxjs';
-import {QuotesService} from "../../quotes.service";
-import {Book} from "../book.model";
+import { AngularFireAction, AngularFireDatabase, DatabaseSnapshot } from 'angularfire2/database';
+import { Observable } from 'rxjs';
+import { QuotesService } from '../../quotes.service';
+import { Book } from '../book.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-book-list',
@@ -11,10 +12,11 @@ import {Book} from "../book.model";
   styleUrls: ['./book-list.component.css']
 })
 export class BookListComponent implements OnInit {
-  books: Observable<AngularFireAction<DatabaseSnapshot>[]>;
+  books: Observable<AngularFireAction<DatabaseSnapshot<any>>[]>;
 
   constructor(private db: AngularFireDatabase,
-              private quotesService: QuotesService) {
+              private quotesService: QuotesService,
+              private router: Router) {
     this.books = db.list<Book>('books').snapshotChanges();
   }
 
@@ -22,6 +24,10 @@ export class BookListComponent implements OnInit {
   }
 
   onBookSelected(book: any) {
-    this.quotesService.bookSelected.emit(book.key);
+    this.quotesService.bookSelected.emit(book.payload.val().id);
+  }
+
+  readMore(bookid: string) {
+    this.router.navigateByUrl('/book/' + bookid);
   }
 }

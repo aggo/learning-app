@@ -2,19 +2,17 @@
 <div class="row">
   <div class="col-xs-12">
     <a
-      href="#"
       class="list-group-item clearfix"
-      *ngFor="let book of books|async" (click)="onBookSelected(book)" [title]="book.key">
+      *ngFor="let book of books|async" [title]="book.key">
       <div class="pull-left">
         <h4 class="list-group-item-heading">{{ book.payload.val().name }}</h4>
         <p class="list-group-item-text">{{ book.payload.val().description }}</p>
+        <p class="list-group-item-text">{{ book.payload.val().id }}</p>
+        <p class="list-group-item-text">{{ book.payload.val().author }}</p>
       </div>
       <span class="pull-right">
-        <img
-          [src]="book.imagePath"
-          alt="{{ book.name }}"
-          class="img-responsive"
-          style="max-height: 50px;">
+        <button (click)="readMore(book.payload.val().id)" title="Read more...">Read more...</button>
+        <button (click)="onBookSelected(book)" title="Quotes">Quotes</button>
       </span>
     </a>
   </div>

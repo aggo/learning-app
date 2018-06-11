@@ -1,6 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {AngularFireDatabase} from 'angularfire2/database';
-import {Book} from "../../book.model";
+import { Component, OnInit } from '@angular/core';
+import { AngularFireDatabase } from 'angularfire2/database';
+import { Book } from '../../book.model';
 
 @Component({
   selector: 'app-book-appender',
@@ -11,6 +11,8 @@ export class BookAppenderComponent implements OnInit {
   public canAddBook = false;
   public booksAddedMessage = 'No book added so far!';
   public newBookName: string;
+  public newBookId: string;
+  public newBookAuthor: string;
 
   constructor(private db: AngularFireDatabase) {
     // = "make sth happen after 2 seconds"
@@ -23,8 +25,8 @@ export class BookAppenderComponent implements OnInit {
   }
 
   onBookAdded() {
-    const book = new Book(this.newBookName, 'random desc', '');
+    const book = new Book(this.newBookName, 'random desc', '', this.newBookId, this.newBookAuthor);
     this.db.list('/books').push(book);
     this.booksAddedMessage = 'Book ' + this.newBookName + ' was added!';
   }
-  }
+}
