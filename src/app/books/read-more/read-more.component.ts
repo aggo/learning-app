@@ -15,6 +15,7 @@ export class ReadMoreComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log(this.activatedRoute.snapshot.paramMap);
     this.id = this.activatedRoute.snapshot.paramMap.get('id');
     console.log(this.id);
   }

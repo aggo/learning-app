@@ -24,10 +24,12 @@ export class BookListComponent implements OnInit {
   }
 
   onBookSelected(book: any) {
+    this.quotesService.noBookChecked = false;
     this.quotesService.bookSelected.emit(book.payload.val().id);
   }
 
   readMore(bookid: string) {
-    this.router.navigateByUrl('/book/' + bookid);
+    // this.router.navigateByUrl('/book/' + bookid);
+    this.router.navigate(['book', bookid]); // builds the same route as above
   }
 }

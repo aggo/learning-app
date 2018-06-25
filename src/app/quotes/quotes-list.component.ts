@@ -13,7 +13,7 @@ import { QuotesService } from '../quotes.service';
 export class QuotesListComponent implements OnInit {
   quotes: Observable<AngularFireAction<DatabaseSnapshot<any>>[]>;
 
-  constructor(private db: AngularFireDatabase, private quotesService: QuotesService) {
+  constructor(private db: AngularFireDatabase, public quotesService: QuotesService) {
 
     // https://github.com/angular/angularfire2/blob/master/docs/rtdb/lists.md
     // snapshotChanges(): Why would you use it? - When you need a list of data but also
